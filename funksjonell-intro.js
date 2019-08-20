@@ -1,3 +1,5 @@
+// egghead practice
+
 const inspectArguments = fn => {
     return (...args) => {
         console.log(...args);
@@ -40,6 +42,8 @@ const inspectAddTo10 = inspectArguments(add10);
 const inspectAdd = inspectArguments(add);
 const inspectNormalAdd = inspectArguments(normalAdd);
 
+
+// code wars kata
 
 const s="aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
 
@@ -152,4 +156,26 @@ goodVsEvil = (good, evil) => {
 
 validParentheses = (parens) => {
     //TODO 
-  }
+}
+
+// functional practice
+const austinMartin = {
+    name: 'Aston Martin One-77',
+    horsepower: 750,
+    dollar_value: 1850000,
+    in_stock: true,
+};
+
+const isLastInStock = (cars) => {
+    const lastCar = last(cars);
+    return prop('in_stock', lastCar);
+};
+
+// functional rewrite with compose
+const inStock = prop('in_stock')
+const isLastInStock = compose(
+    inStock,
+    last
+);
+
+// console.log(isLastInStock(austinMartin));
